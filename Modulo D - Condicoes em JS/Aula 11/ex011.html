@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificando Nacionalidade Brasileira</title>
+
+    <style>
+        body {
+            background-color: rgb(24, 7, 41);
+            color: white;
+            font: normal 24px Arial;
+        }
+
+        input#btn {
+            background-color: rgb(76, 44, 105);
+            color: white;
+            border: none;
+            padding: 8px;
+            font-weight: 900;
+            border-radius: 8px;
+        }
+
+        input#btn:hover {
+            background-color: rgb(114, 65, 160);
+            cursor: pointer;
+        }
+
+        input {
+            padding: 8px;
+            border: none;
+            border-radius: 8px;
+            margin: 8px 0;
+        }
+
+        h1 {
+            padding-bottom: 56px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Verificador Nacionalidade</h1>
+        <label for="txpais">Qual o seu País?</label>
+        <input type="text" name="txtpais" id="txtpais" required>
+
+        <input type="button" value="Verificador" onclick="verificar()" id="btn">
+
+        <div id="res"></div>
+    </div>
+    <script>
+        function verificar(){
+            var pais = window.document.querySelector('input#txtpais')
+            var res = window.document.querySelector('div#res')
+
+            var txtp = (txtpais.value)
+
+            res.innerHTML = `<p>Vivendo em <strong>${txtp}!</strong></p>`
+
+            if (txtp.toLowerCase() == 'brasil') {
+                res.innerHTML += `<p>Você é Brasileiro!</p>`
+            }else {
+                res.innerHTML += `<p>Você é Estrangeiro!</p>`
+            }
+            
+        }
+    </script>
+</body>
+</html>
